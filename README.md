@@ -6,31 +6,6 @@ In 1979, Robert Axelrod organized a computational tournament to study strategies
 
 Discussion over the past 40 years has explored and extended Axelrod's tournaments, creating a new area of research on computational models of evolutionary behavior under social dilemmas. However, I was unable to find an exact analog for Stag Hunt games which I believe to capture a key strategic dynamic in engineering systems problems [3]. Furthermore, research developed in the Collective Design Lab proposes a more detailed bi-level game with both upper-level strategic decisions and lower-level design decisions, mirroring the types of decisions facing engineering systems [4]. How might computational strategies of 2020 fare in this extended Stag Hunt game?
 
-As a special winter break activity, I propose a CoDe Lab "Hunting Tournament" to study this problem.
-
-## Tournament Format
-
-The CoDe Lab Hunting Tournament will be held virtually at 12:00pm ET on Friday January 29. The tournament will follow a round-robin (all-plays-all) format. The tournament games will be conducted in two phases:
- * Phase 1 considers design games with only one lower-level decision.
- * Phase 2 considers design games with more than one lower-level design decision.
-
-A list of candidate design games for both phases will be released before Friday January 22.
-
-The submission with the highest average score across all matches will be considered the winner; however, there will also be recognitions for the submissions with the highest score in Phase 1 and Phase 2, respectively.
-
-## Submission Format
-
-All submissions must be received via ZIP email attachment to pgrogan@stevens.edu by 11:59pm ET on Thursday January 28. Up to 2 submissions per person are permitted.
-
-Each submission must provide a single Python object class implementing three functions:
- * `__init__(game)`: constructor that initializes your player. The only argument provided in the tournament will be the game definition (an instance of a `DesignGame`, see Technical Details below). The player is initialized for each game and persists through all iterations. In other words, a player retains state information across all iterations but is "reset" before each game.
- * `get_decision()`: function to retrieve the next player decision for each iteration. The return type must be a `Decision` object with strategy and design properties (see Technical Details below).
- * `report_result(result)`: function called by the game to report the result of each iteration. The argument is a `Result` object (see Technical Details below).
-
-Additionally, the object property `name` will be used to identify your player and should be assigned a unique value for each submission.
-
-Unhandled exceptions or invalid decisions (e.g., selecting a non-existent design or strategy) during the tournament will result in disqualification.
-
 ## Technical Details
 
 Review the [source code repository](https://github.com/code-lab-org/hunt-tournament) for more information on the Python API.
